@@ -1,6 +1,7 @@
 import './App.css'
 import Users from './Components/Users'
 
+const usersPromise = fetch('http://localhost:3000/users').then(res=>res.json());
 
 function App() {
   return (
@@ -8,7 +9,7 @@ function App() {
       
       <h1>simple crud</h1>
       
-      <Users/>
+      <Users usersPromise={usersPromise}/>
     </>
   )
 }
